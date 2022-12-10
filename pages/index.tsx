@@ -5,28 +5,9 @@ import Calendar from '../components/Calendar'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import supabase from '../config/supabase'
 
-const Home: NextPage = () => {
-  const fakeData = [
-    {
-      name:"Vanessa's Birthday",
-      date:"18th June 2023",
-      desc:"It's your girlfriend's birthday. Don't screw it up",
-      link:"https://seasu.space"
-    },
-    {
-      name:"Vanessa's Birthday",
-      date:"24th June 2023",
-      desc:"It's your girlfriend's birthday. Don't screw it up",
-      link:"https://seasu.space"
-    },
-    {
-      name:"Vanessa's Birthday",
-      date:"18th June 2023",
-      desc:"It's your girlfriend's birthday. Don't screw it up",
-      link:"https://www.eventbrite.com/l/sell-tickets/?&utm_source=google&utm_medium=cpc&utm_campaign=US_BAU_GA01_01_BR_1PP_Clicks_Core&gclid=CjwKCAiAyfybBhBKEiwAgtB7flFdwJTeXd8vY4kzQySb50XYzy1kP9xBaWesUJYsT_F_yW-GJmDeVxoCVZYQAvD_BwE&gclsrc=aw.ds"
-    }
-  ]
+const Home: NextPage = (props:any) => {
   return (
     <>
       <Head>
@@ -36,10 +17,31 @@ const Home: NextPage = () => {
       <Header></Header>
       <Hero></Hero>
       <AddEventModal></AddEventModal>
-      <Calendar events={fakeData}></Calendar>
+      <Calendar events={props.data}></Calendar>
       <Footer></Footer>
     </>
   )
 }
 
 export default Home
+
+export async function getServerSideProps(context:any) {
+  var today:any = new Date()
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = mm + '/' + dd + '/' + yyyy;
+  async function fetchEvents() {
+    let { data: seasu_events, error } = await supabase
+    .from('seasu_events')
+    .select('*')
+    .gte("date",today)
+    .order("date",{ascending:true})
+    return seasu_events
+  }
+  const data = await fetchEvents()
+  return {
+    props: {data}, // will be passed to the page component as props
+  }
+}
+

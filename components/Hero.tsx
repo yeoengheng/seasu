@@ -1,5 +1,5 @@
 
-function Hero(){
+function Hero():JSX.Element{
     return(
     <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
