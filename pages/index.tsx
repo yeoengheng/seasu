@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useState } from 'react'
 import AddEventModal from '../components/AddEventModal'
 import Calendar from '../components/Calendar'
 import Footer from '../components/Footer'
@@ -7,16 +8,19 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import supabase from '../config/supabase'
 
+
 const Home: NextPage = (props:any) => {
+  const [showModal, setShowModal] = useState(false)
+  const handleCloseModal = ()=>{setShowModal(false)}
   return (
     <>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
-      <Header></Header>
+      <Header setShowModal={setShowModal}></Header>
       <Hero></Hero>
-      <AddEventModal></AddEventModal>
+      <AddEventModal visible={showModal} closeModal={handleCloseModal}></AddEventModal>
       <Calendar events={props.data}></Calendar>
       <Footer></Footer>
     </>

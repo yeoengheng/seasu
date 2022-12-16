@@ -3,13 +3,13 @@ import {CalendarIcon} from '@heroicons/react/24/solid'
 
 function Calendar(props:any): JSX.Element{
     return(
-        <section className="bg-white dark:bg-gray-900 mt-2 mx-10">
+        <section className="body mt-4 mx-10 mb-6 pb-8">
             <Timeline>
                 {props.events?.map((event:any)=>(
-                    <Timeline.Item key={event.name}>
+                    <Timeline.Item  key={event.name}>
                     <Timeline.Point icon={CalendarIcon} />
                     <Timeline.Content>
-                    <Timeline.Time>
+                    <Timeline.Time color='white'>
                         {event.date}
                     </Timeline.Time>
                     <Timeline.Title>

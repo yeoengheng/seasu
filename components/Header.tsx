@@ -1,10 +1,8 @@
-import AddEventModal from "./AddEventModal"
-
-function Header (): JSX.Element{
+function Header (props:any): JSX.Element{
     return(
       <header>
         <nav 
-          className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+          className="bg-white px-4 lg:px-6 py-2.5 ">
           <div 
             className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a 
@@ -21,11 +19,10 @@ function Header (): JSX.Element{
               </a>
               <div 
                 className="flex items-center lg:order-2">
-                  <a 
-                    href="#" 
-                    className="primaryButton">
+                  <button 
+                    className="primaryButton" onClick={()=>{props.setShowModal(true)}}>
                     Add Event
-                  </a>
+                  </button>
                   {/* <button 
                     data-collapse-toggle="mobile-menu-2" 
                     type="button" 
@@ -74,7 +71,9 @@ function Header (): JSX.Element{
             </div>
           </div>
         </nav>
+        
       </header>
+      
     )
 }
     
