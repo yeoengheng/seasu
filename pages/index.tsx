@@ -2,11 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 import AddEventModal from '../components/AddEventModal'
-import Calendar from '../components/Calendar'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import supabase from '../config/supabase'
+import Timeline from '../components/Timeline'
 
 
 const Home: NextPage = (props:any) => {
@@ -21,7 +21,7 @@ const Home: NextPage = (props:any) => {
       <Header setShowModal={setShowModal}></Header>
       <Hero></Hero>
       <AddEventModal visible={showModal} closeModal={handleCloseModal}></AddEventModal>
-      <Calendar events={props.data}></Calendar>
+      <Timeline events={props.data}></Timeline>
       <Footer></Footer>
     </>
   )

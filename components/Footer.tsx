@@ -1,6 +1,6 @@
 function Footer(): JSX.Element{
     return(
-        <footer className="p-4 bg-gradient-to-r from-blue-600 to-blue-800">
+        <footer className="p-4 bg-gradient-to-r from-indigo-500 to-indigo-900">
             <div className="mx-auto max-w-screen-xl text-center">
                 <a href="#" className="flex justify-center items-center text-2xl font-semibold text-white">
                 SEASU    
@@ -29,7 +29,7 @@ function Footer(): JSX.Element{
                         <a href="#" className="mr-4 hover:underline md:mr-6">Contact</a>
                     </li>
                 </ul> */}
-                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#" className="hover:underline">SEASU™</a>. All Rights Reserved.</span>
+                <span className="text-sm text-white sm:text-center">© 2021-2022 <a href="#" className="hover:underline">SEASU™</a>. All Rights Reserved.</span>
             </div>
         </footer>
     )

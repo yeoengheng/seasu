@@ -2,7 +2,7 @@ function Header (props:any): JSX.Element{
     return(
       <header>
         <nav 
-          className="bg-white px-4 lg:px-6 py-2.5 ">
+          className="bg-gradient-to-r from-indigo-500 to-indigo-900 px-4 lg:px-6 py-2.5 ">
           <div 
             className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a 
@@ -13,7 +13,7 @@ function Header (props:any): JSX.Element{
                     className="mr-3 h-6 sm:h-9" 
                     alt="SEASU Logo" />
                   <span 
-                  className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                  className="self-center text-xl text-white font-semibold whitespace-nowrap">
                     SEASU
                   </span>
               </a>

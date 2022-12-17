@@ -8,6 +8,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@supabase/supabase-js": "^2.1.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "flowbite": "^1.5.5",
     "flowbite-react": "^0.3.5",
     "next": "latest",
