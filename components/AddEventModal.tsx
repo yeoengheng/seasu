@@ -4,7 +4,7 @@ function AddEventModal( { visible = true , closeModal =()=>{}}):JSX.Element{
     const sendEmail = (e:any) => {
       e.preventDefault();
   
-      emailjs.sendForm('service_vczsqn9', 'template_rwklaj2', e.target, 'uOk49p-HyZQnqg6EI')
+      emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID , e.target, process.env.EMAIL_KEY)
         .then((result) => {
             closeModal()
             console.log(result.text);
