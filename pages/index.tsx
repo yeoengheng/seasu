@@ -15,8 +15,10 @@ const Home: NextPage = (props:any) => {
   return (
     <>
       <Head>
-        <title>Home</title>
-        <link rel="icon" href="/favicon.ico"></link>
+        <title>SG's Tech Calendar</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content='A simple calendar with all the tech events in Singapore'/>
+        <link rel="icon" href="https://svgshare.com/i/osE.svg"></link>
       </Head>
       <Header setShowModal={setShowModal}></Header>
       <Hero></Hero>

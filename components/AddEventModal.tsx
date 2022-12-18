@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 
-function AddEventModal( { visible = true , closeModal =()=>{console.log()}}):JSX.Element{
+function AddEventModal( { visible = true , closeModal =()=>{}}):JSX.Element{
     const sendEmail = (e:any) => {
       e.preventDefault();
   

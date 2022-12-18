@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 @layer base{
-    html {
-        font-family: Inter, system-ui, sans-serif;
-    }
+
     header {
         @apply bg-gradient-to-r from-indigo-500 to-indigo-900
     }

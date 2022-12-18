@@ -6,11 +6,11 @@ function Header (props:any): JSX.Element{
           <div 
             className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a 
-              href="https://seasu.space" 
+              href="#" 
               className="flex items-center">
                   <img 
-                    src="https://flowbite.com/docs/images/logo.svg" 
-                    className="mr-3 h-6 sm:h-9" 
+                    src="https://svgshare.com/i/osE.svg" 
+                    className="mr-2 h-6 sm:h-9" 
                     alt="SEASU Logo" />
                   <span 
                   className="self-center text-xl text-white font-semibold whitespace-nowrap">
