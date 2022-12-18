@@ -1,4 +1,18 @@
+import emailjs from '@emailjs/browser';
+
 function AddEventModal( { visible = true , closeModal =()=>{console.log()}}):JSX.Element{
+    const sendEmail = (e:any) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_vczsqn9', 'template_rwklaj2', e.target, 'uOk49p-HyZQnqg6EI')
+        .then((result) => {
+            closeModal()
+            console.log(result.text);
+        }, (error) => {
+            closeModal()
+            console.log(error.text);
+        });
+    }
     if (!visible) return null as any;
     const handleonClose = (e:any) =>{
         if (e.target.id === "popup-modal")
@@ -15,8 +29,8 @@ function AddEventModal( { visible = true , closeModal =()=>{console.log()}}):JSX
                     </button>
                     {/* Modal Content */}
                     <div className="py-6 px-6 lg:px-8">
-                        <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">Thanks in advanced!</h3>
-                        <form className="space-y-6" action="#">
+                        <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">Thanks in advance!</h3>
+                        <form className="space-y-6" onSubmit={sendEmail}>
                             <div>
                                 <label className="inputLabel">Your email</label>
                                 <input type="email" name="email" id="email" className="inputStyle" placeholder="name@company.com" required/>
