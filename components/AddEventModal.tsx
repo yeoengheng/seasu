@@ -1,10 +1,14 @@
 import emailjs from '@emailjs/browser';
 
 function AddEventModal( { visible = true , closeModal =()=>{}}):JSX.Element{
+    const SERVICE_ID = process.env.SERVICE_ID
+    const TEMPLATE_ID = process.env.TEMPLATE_ID
+    const EMAIL_KEY = process.env.EMAIL_KEY
+    
     const sendEmail = (e:any) => {
       e.preventDefault();
   
-      emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID , e.target, process.env.EMAIL_KEY)
+      emailjs.sendForm("service_vczsqn9", "template_rwklaj2" , e.target, "uOk49p-HyZQnqg6EI")
         .then((result) => {
             closeModal()
             console.log(result.text);
